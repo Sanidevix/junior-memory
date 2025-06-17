@@ -377,21 +377,30 @@
 			document.getElementById('timer').textContent = '00:00';
 		}
 		
-		shuffleArray(array) {
-		  let currentIndex = array.length; // Empieza desde el final del array
-		  let randomIndex;
+		shuffleArray(arrayOriginal) {
+		  // Utiliza el algoritmo de Fisher-Yates (Knuth) Shuffle para la mezcla.
+		  // Paso 1: Eliminar duplicados usando un Set
+		  // Un Set solo almacena valores únicos. Al convertir el array a Set y luego de vuelta a array,
+		  // los duplicados son automáticamente eliminados.
+		  const arraySinDuplicados = [...new Set(arrayOriginal)];
+
+		  // Paso 2: Mezclar el array sin duplicados (algoritmo de Fisher-Yates)
+		  let indiceActual = arraySinDuplicados.length;
+		  let indiceAleatorio;
 
 		  // Mientras queden elementos por mezclar
-		  while (currentIndex !== 0) {
+		  while (indiceActual !== 0) {
 			// Selecciona un elemento restante
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex--;
+			indiceAleatorio = Math.floor(Math.random() * indiceActual);
+			indiceActual--;
 
 			// Intercambia el elemento actual con el elemento aleatorio
-			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+			[arraySinDuplicados[indiceActual], arraySinDuplicados[indiceAleatorio]] =
+			  [arraySinDuplicados[indiceAleatorio], arraySinDuplicados[indiceActual]];
 		  }
 
-		  return array;
+		  // Devuelve el array que ya no tiene duplicados y está mezclado
+		  return arraySinDuplicados;
 		}
 	}
 

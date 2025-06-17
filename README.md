@@ -128,9 +128,7 @@ npx http-server
 php -S localhost:8000
 
 # Juega directamente en Github Pages
-Aquí tienes el enlace en Markdown:
-
-[Junior Memory](https://sanidevix.github.io/junior-memory/)
+https://sanidevix.github.io/junior-memory/
 
 ```
 

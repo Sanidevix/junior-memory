@@ -126,6 +126,10 @@ npx http-server
 
 # Con PHP
 php -S localhost:8000
+
+# Juega directamente en Github Pages
+https://sanidevix.github.io/junior-memory/
+
 ```
 
 Luego accede a `http://localhost:8000` en tu navegador.

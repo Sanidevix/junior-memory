@@ -112,11 +112,11 @@ junior-memory-game/
 ## 🚀 Instalación y Ejecución
 
 ### Opción 1: Ejecutar Directamente
-1. Descarga el archivo `index.html`
-2. Abre el archivo en cualquier navegador web moderno
+1. Descarga los archivos respetando la estructura indicada
+2. Abre el archivo `index.html` en cualquier navegador web moderno
 3. ¡Listo para jugar!
 
-### Opción 2: Servidor Local (Recomendado)
+### Opción 2: Servidor Local
 ```bash
 # Con Python 3
 python -m http.server 8000
@@ -127,12 +127,13 @@ npx http-server
 # Con PHP
 php -S localhost:8000
 
-# Juega directamente en Github Pages
-https://sanidevix.github.io/junior-memory/
-
 ```
 
 Luego accede a `http://localhost:8000` en tu navegador.
+
+### Opción 2: Github Pages
+
+Accede mediante el siguiente enlace a [Junior Memory](https://sanidevix.github.io/junior-memory/) en tu navegador
 
 ## 📱 Compatibilidad
 

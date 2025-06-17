@@ -54,7 +54,7 @@ Junior Memory Game es un juego clásico de encontrar parejas de cartas con múlt
 
 3. **Jugar**:
    - **Un Jugador**: Juega normalmente buscando parejas
-   - **Multijugador**: 
+   - **Multijugador**: (En progreso)
      - El jugador activo (destacado) hace su movimiento
      - Si encuentra pareja, continúa jugando
      - Si falla, pasa al siguiente jugador
@@ -157,7 +157,7 @@ Luego accede a `http://localhost:8000` en tu navegador.
 2. Usa nombres descriptivos como: `cat.jpg`, `dog.png`, `img1.jpg`, etc.
 3. Formatos soportados: JPG, JPEG, PNG, GIF, WebP
 4. Haz clic en "Cargar desde /imgs" para cargar automáticamente las imágenes disponibles
-5. En este repositorio se encuentran las imagenes del juego original
+5. En este repositorio se encuentran las imagenes del juego original (1980 - Ravensburger Original Junior Memory Game)
 
 #### Nombres de archivos recomendados:
 - **Numerados**: `img1.jpg`, `img2.png`, `image1.jpg`, etc.

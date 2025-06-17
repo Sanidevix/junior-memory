@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior Memory Game</title>
+    <link rel="stylesheet" href="css/style_jm.css">
+	
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Junior Memory Game</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="rows">Filas:</label>
+                <input type="number" id="rows" min="2" max="6" value="4">
+            </div>
+            
+            <div class="control-group">
+                <label for="cols">Columnas:</label>
+                <input type="number" id="cols" min="2" max="8" value="4">
+            </div>
+            
+            <div class="control-group">
+                <label for="gameMode">Modo de Juego:</label>
+                <select id="gameMode">
+                    <option value="classic">Clásico</option>
+                    <option value="timed">Por Tiempo</option>
+					<option value="flash">Flash</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="flashTime">Tiempo Flash (seg):</label>
+                <input type="number" id="flashTime" min="1" max="10" value="3">
+            </div>
+            
+            <div class="control-group">
+                <label for="gameTime">Tiempo Límite (seg):</label>
+                <input type="number" id="gameTime" min="30" max="300" value="60">
+            </div>
+            
+            <button onclick="openImageModal()">Cargar Imágenes</button>
+            <button onclick="loadDirectoryImages()">Cartas originales</button>
+            <button onclick="startGame()">Nuevo Juego</button>
+        </div>
+
+        <div class="game-info">
+            <div class="info-card">
+                <span class="info-value" id="moves">0</span>
+                <div>Movimientos</div>
+            </div>
+            <div class="info-card">
+                <span class="info-value" id="pairs">0</span>
+                <div>Parejas</div>
+            </div>
+            <div class="info-card">
+                <span class="info-value" id="timer">00:00</span>
+                <div>Tiempo</div>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard"></div>
+    </div>
+
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <h2>Cargar Imágenes Personalizadas</h2>
+            <p>Selecciona al menos 8 imágenes para el juego:</p>
+            <div class="image-upload">
+                <input type="file" id="imageInput" multiple accept="image/*">
+            </div>
+            <div class="image-preview" id="imagePreview"></div>
+            <div style="margin-top: 20px;">
+                <button onclick="useCustomImages()">Usar Imágenes</button>
+                <button onclick="useDefaultImages()">Usar Emojis por Defecto</button>
+                <button onclick="loadDirectoryImages()">Cargar desde /imgs</button>
+                <button onclick="closeImageModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flash-overlay" id="flashOverlay">
+        <div>¡Memoriza las cartas!</div>
+    </div>
+
+    <script src="js/script_jm.js" async></script>
+</body>
+</html>

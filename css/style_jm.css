@@ -1,0 +1,265 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .controls {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            min-width: 120px;
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        input, select, button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.9);
+            color: #333;
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .game-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.15);
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .info-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .game-board {
+            display: grid;
+            gap: 10px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin: 20px 0;
+        }
+
+        .card {
+            aspect-ratio: 1;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.6s ease;
+            transform-style: preserve-3d;
+            position: relative;
+            min-height: 80px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card.matched {
+            background: linear-gradient(45deg, #56ab2f, #a8e6cf);
+            cursor: default;
+            animation: matched 0.5s ease;
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            backface-visibility: hidden;
+        }
+
+        .card-back {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card-front {
+            background: white;
+            transform: rotateY(180deg);
+            font-size: 2.5rem;
+        }
+
+        .card-front img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        @keyframes matched {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: #333;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .modal h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .image-upload {
+            margin: 20px 0;
+        }
+
+        .image-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .preview-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+
+        .flash-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            font-size: 3rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .controls { flex-direction: column; }
+            .game-info { flex-direction: column; }
+            .card { min-height: 60px; font-size: 1.5rem; }
+            .card-front { font-size: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 10px; }
+            .controls { padding: 15px; }
+            .card { min-height: 50px; font-size: 1.2rem; }
+            .card-front { font-size: 1.5rem; }
+        }
+        }

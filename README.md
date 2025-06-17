@@ -87,7 +87,7 @@ Junior Memory Game es un juego clásico de encontrar parejas de cartas con múlt
 ### Imágenes
 - **Por Defecto**: 20 emojis de animales incluidos
 - **Personalizadas**: Sube tus propias imágenes desde tu dispositivo (mínimo 8 para un juego 4x4)
-- **Directorio /imgs**: Carga automáticamente imágenes desde el directorio imgs del proyecto
+- **Cartas Originales**: Carga automáticamente imágenes desde el directorio imgs del proyecto, actualmente las del juego original (1980 - [Ravensburger](https://es.wikipedia.org/wiki/Ravensburger) Original Junior Memory Game)
 
 ## 📁 Estructura del Proyecto
 
@@ -158,7 +158,7 @@ Accede mediante el siguiente enlace a [Junior Memory](https://sanidevix.github.i
 2. Usa nombres descriptivos como: `cat.jpg`, `dog.png`, `img1.jpg`, etc.
 3. Formatos soportados: JPG, JPEG, PNG, GIF, WebP
 4. Haz clic en "Cargar desde /imgs" para cargar automáticamente las imágenes disponibles
-5. En este repositorio se encuentran las imagenes del juego original (1980 - Ravensburger Original Junior Memory Game)
+5. En este repositorio se encuentran las imagenes del juego original (1980 - [Ravensburger](https://es.wikipedia.org/wiki/Ravensburger) Original Junior Memory Game)
 
 #### Nombres de archivos recomendados:
 - **Numerados**: `img1.jpg`, `img2.png`, `image1.jpg`, etc.
